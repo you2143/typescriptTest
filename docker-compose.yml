@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  node:
+    container_name: sample_node
+    restart: always
+    build:
+      context: ./docker/.
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000
+    tty: true
