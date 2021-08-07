@@ -1,0 +1,25 @@
+{
+  "name": "typescript-sample",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/you2143/typescriptTest.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "takeno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/you2143/typescriptTest/issues"
+  },
+  "homepage": "https://github.com/you2143/typescriptTest#readme",
+  "dependencies": {
+    "typescript": "^4.3.5"
+  }
+}
