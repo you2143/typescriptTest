@@ -5,13 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-node",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "name": "ts-node-dev",
+            "restart": true,
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/src/app.js"
-        }
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ts-node-dev",
+            "skipFiles": ["<node_internals>/**"],
+            "type": "pwa-node",
+            "runtimeArgs": ["--respawn"],
+            "args": ["${workspaceFolder}/src/index.ts"]
+          }
     ]
 }
