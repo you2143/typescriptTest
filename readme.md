@@ -24,3 +24,5 @@ node.js を使ってAPIを作ろうのプロジェクト
 # 補足
 - Typescriptファイルはコンパイルしてからデプロイする。  
   そのためTypeScriptのモジュール自体はdevDependenciesに格納
+- 本来であればRemote Containerを使用してコンテナ内で開発環境を完成させたかったが、Windowsだとファイルシステムの関係上ホットリロードが出来ないため
+  WindowsはNode.jsをインストールする必要がある。LinuxOrMacであればおそらくできるはず
