@@ -15,7 +15,11 @@ node.js を使ってAPIを作ろうのプロジェクト
 # 使用しているツール（VSCode拡張）
 - VSCode Remote Container
 
-## 1.実行方法
+# 実行方法
 1. npm run build を実行  
   (何を実行しているかはpackage.jsonファイルの「build」の定義を参照)
 2. 上記実行後、「dist」フォルダが作成されるので、「node ./dist/app.js」を実行
+
+# 補足
+- Typescriptファイルはコンパイルしてからデプロイする。  
+  そのためTypeScriptのモジュール自体はdevDependenciesに格納
