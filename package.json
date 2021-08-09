@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/you2143/typescriptTest#readme",
   "dependencies": {
+    "@types/node": "^16.4.13",
     "typescript": "^4.3.5"
   }
 }
