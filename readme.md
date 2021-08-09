@@ -3,10 +3,8 @@ node.js を使ってAPIを作ろうのプロジェクト
 
 # 使用している技術
 - node.js
-- typescript
 - docker
 - docker-compose
-
 # 使用しているツール
 - vscode
 - git
@@ -14,6 +12,10 @@ node.js を使ってAPIを作ろうのプロジェクト
 
 # 使用しているツール（VSCode拡張）
 - VSCode Remote Container
+
+# 使用しているツール（node.js関連）
+- typescript
+- ts-node-dev
 
 # 実行方法
 1. npm run dev を実行  
