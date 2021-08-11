@@ -10,12 +10,13 @@ node.js を使ってAPIを作ろうのプロジェクト
 - git
 - docker desktop for windows
 
-# 使用しているツール（VSCode拡張）
+# 使用しているVSCode拡張
 - VSCode Remote Container
 
-# 使用しているツール（node.js関連）
+# 使用しているnode.jsのパッケージ
 - typescript
 - ts-node-dev
+- Express
 
 # 実行方法
 1. npm run dev を実行
