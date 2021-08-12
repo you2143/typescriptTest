@@ -14,9 +14,16 @@ node.js を使ってAPIを作ろうのプロジェクト
 - VSCode Remote Container
 
 # 使用しているnode.jsのパッケージ
-- typescript
-- ts-node-dev
+- typescript  
+  JavaScriptに型を導入する
+- ts-node-dev  
+  ホットリロード有効にするため(開発効率向上)
 - Express
+  APIを実装するためのフレームワーク
+- eslint
+  コーディングルールの統一のため(開発効率向上)
+- prettier
+  コーディングルールの統一のため(開発効率向上)
 
 # 実行方法
 1. npm run dev を実行
@@ -31,5 +38,9 @@ node.js を使ってAPIを作ろうのプロジェクト
    (変換したJavaScriptはDistフォルダへ出力される)
 2. 出力したファイルをNodeで実行する
 # 補足
-- Typescriptファイルはコンパイルしてからデプロイする。  
+- Typescriptファイルはコンパイルしてからデプロイする想定。  
   そのためTypeScriptのモジュール自体はdevDependenciesに格納
+- eslintとprettierを導入しているため、「npm run lint」を実行することで、コーディングルールに則っていない  
+  コードは自動的に整形される。　　
+  コーディングルールは導入時に必要最低限としている。ルールを追加したかどうかは設定ファイルである
+  「.eslintrc.js」と「.prettiertc.js」のコミットログを追跡すること
