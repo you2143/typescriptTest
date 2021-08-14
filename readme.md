@@ -5,6 +5,8 @@ node.js を使ってAPIを作ろうのプロジェクト
 - node.js
 - docker
 - docker-compose
+- mysql
+
 # 使用しているツール
 - vscode
 - git
