@@ -1,33 +1,18 @@
-import express from 'express'
-const app: express.Express = express()
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+import "reflect-metadata";
+import {createConnection} from "typeorm";
+import {User} from "./entity/User";
 
-//CROS対応（というか完全無防備：本番環境ではだめ絶対）
-app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "*")
-    res.header("Access-Control-Allow-Headers", "*");
-    next();
-})
+createConnection().then(async connection => {
 
-app.listen(3000, () => {
-    console.log("Start on port 3000.")
-})
+    console.log("Inserting a new user into the database...");
+    const user = new User("Timber","Saw",25);
+    await connection.manager.save(user);
+    console.log("Saved a new user with id: " + user.id);
 
-type User = {
-    id: number
-    name: string
-    email: string
-};
+    console.log("Loading users from the database...");
+    const users = await connection.manager.find(User);
+    console.log("Loaded users: ", users);
 
-const users: User[] = [
-    { id: 1, name: "User1", email: "user1@test.local" },
-    { id: 2, name: "User2", email: "user2@test.local" },
-    { id: 3, name: "User3", email: "user3@test.local" }
-]
+    console.log("Here you can setup and run express/koa/any other framework.");
 
-//一覧取得
-app.get('/', (req: express.Request, res: express.Response) => {
-    res.send(JSON.stringify(users))
-})
+}).catch(error => console.log(error));
