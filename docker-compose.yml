@@ -2,6 +2,7 @@ version: '3.7'
 services:
   node:
     container_name: sample_node
+    hostname: node_host
     restart: always
     build:
       context: ./docker/.
@@ -13,22 +14,22 @@ services:
     environment:
           - CHOKIDAR_USEPOLLING=true
     depends_on:
-      - mysql
+      - db
     networks:
       - dbnet
-  mysql:
-    image: "mysql:5.7.10"
+  db:
+    container_name: sample_db
+    hostname: mysql_host
+    image: "mysql:5.7"
     ports:
-      - "23306:23306"
+      - "23306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: "admin"
-      MYSQL_USER: "test"
-      MYSQL_PASSWORD: "test"
-      MYSQL_DATABASE: "test"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_DATABASE: "database"
     networks:
       - dbnet
 
-volumes:
-  db-data:
 networks:
   dbnet:
